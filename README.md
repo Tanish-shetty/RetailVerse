@@ -11,7 +11,7 @@ No real-world dataset was supplied: the included generator produces a clearly la
 reproducible synthetic fixture. Its results are demonstrations, not market claims.
 
 ## Features
-- Eight React pages: Overview, Sales, Consumers, Products, Promotions, Forecasting, Anomalies and Copilot.
+- Seven React pages: Overview, Consumers, Products, Promotions, Forecasting, Anomalies and Copilot. Overview includes monthly sales performance.
 - Audited ETL, profiling notebook, MySQL star schema and SQL analytical examples.
 - Revenue/profit/units/AOV/margin, regional/category comparisons and repeat purchase rate.
 - Explained RFM rules and silhouette-selected K-Means clusters with actual profiles.
