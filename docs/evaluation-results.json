@@ -1,0 +1,695 @@
+{
+  "provenance": [
+    "synthetic"
+  ],
+  "rows": 21651,
+  "overview": {
+    "revenue": 9280327.5,
+    "profit": 3093361.0999999996,
+    "units": 86821,
+    "orders": 10826,
+    "customers": 600,
+    "average_order_value": 857.2258913726215,
+    "margin_pct": 33.332456209115456,
+    "repeat_purchase_pct": 100.0
+  },
+  "segments": {
+    "status": "ok",
+    "selected_k": 2,
+    "silhouette": 0.33466560046399535,
+    "evaluation": [
+      {
+        "k": 2,
+        "silhouette": 0.33466560046399535,
+        "inertia": 1080.0442531431631
+      },
+      {
+        "k": 3,
+        "silhouette": 0.3026386029941259,
+        "inertia": 821.2133192871186
+      },
+      {
+        "k": 4,
+        "silhouette": 0.3009192586864241,
+        "inertia": 654.7707057393883
+      },
+      {
+        "k": 5,
+        "silhouette": 0.29171281573253444,
+        "inertia": 540.533196710002
+      },
+      {
+        "k": 6,
+        "silhouette": 0.28290258931165696,
+        "inertia": 476.29701935166315
+      }
+    ],
+    "profiles": [
+      {
+        "cluster": 0,
+        "customers": 289,
+        "recency": 85.47750865051903,
+        "frequency": 14.813148788927336,
+        "monetary": 12015.418685121107
+      },
+      {
+        "cluster": 1,
+        "customers": 311,
+        "recency": 48.59807073954984,
+        "frequency": 21.04501607717042,
+        "monetary": 18674.827974276526
+      }
+    ],
+    "caveat": "Exploratory unsupervised clusters; IDs are not business labels."
+  },
+  "forecast": {
+    "status": "ok",
+    "selected_model": "XGBoost",
+    "baseline_metrics": {
+      "mae": 56.59288441141447,
+      "rmse": 69.68397570761815,
+      "mape_pct": 10.523670527371532
+    },
+    "xgboost_metrics": {
+      "mae": 35.60959116617838,
+      "rmse": 46.31659835610649,
+      "mape_pct": 7.083495455033825
+    },
+    "evaluation": "Chronological recursive holdout; XGBoost requires at least 2% lower MAE.",
+    "holdout": [
+      {
+        "date": "2025-10-12",
+        "actual": 502.0,
+        "baseline": 456.5,
+        "xgboost": 473.0538330078125
+      },
+      {
+        "date": "2025-10-19",
+        "actual": 462.0,
+        "baseline": 478.125,
+        "xgboost": 478.0931396484375
+      },
+      {
+        "date": "2025-10-26",
+        "actual": 453.0,
+        "baseline": 463.15625,
+        "xgboost": 517.9730834960938
+      },
+      {
+        "date": "2025-11-02",
+        "actual": 516.0,
+        "baseline": 449.1953125,
+        "xgboost": 494.0609436035156
+      },
+      {
+        "date": "2025-11-09",
+        "actual": 493.0,
+        "baseline": 461.744140625,
+        "xgboost": 477.878662109375
+      },
+      {
+        "date": "2025-11-16",
+        "actual": 619.0,
+        "baseline": 463.05517578125,
+        "xgboost": 519.7307739257812
+      },
+      {
+        "date": "2025-11-23",
+        "actual": 520.0,
+        "baseline": 459.2877197265625,
+        "xgboost": 490.3934326171875
+      },
+      {
+        "date": "2025-11-30",
+        "actual": 498.0,
+        "baseline": 458.3205871582031,
+        "xgboost": 482.7215881347656
+      },
+      {
+        "date": "2025-12-07",
+        "actual": 436.0,
+        "baseline": 460.6019058227539,
+        "xgboost": 525.3902587890625
+      },
+      {
+        "date": "2025-12-14",
+        "actual": 493.0,
+        "baseline": 460.3163471221924,
+        "xgboost": 510.4627990722656
+      },
+      {
+        "date": "2025-12-21",
+        "actual": 559.0,
+        "baseline": 459.631639957428,
+        "xgboost": 548.0641479492188
+      },
+      {
+        "date": "2025-12-28",
+        "actual": 556.0,
+        "baseline": 459.71762001514435,
+        "xgboost": 537.7008056640625
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-01-04",
+        "predicted": 546.9298706054688
+      },
+      {
+        "date": "2026-01-11",
+        "predicted": 618.2488403320312
+      },
+      {
+        "date": "2026-01-18",
+        "predicted": 569.0830078125
+      },
+      {
+        "date": "2026-01-25",
+        "predicted": 597.8939208984375
+      }
+    ],
+    "caveat": "Weekly units; recursive forecasts. No calibrated uncertainty interval. Filter to a product/category for its demand."
+  },
+  "anomalies": [
+    {
+      "entity": "Everyday Tea",
+      "dimension": "product_name",
+      "date": "2023-10-08",
+      "observed": 11760.0,
+      "expected": 6097.0,
+      "anomaly_score": 0.3606976358310935,
+      "severity": "High",
+      "direction": "spike"
+    },
+    {
+      "entity": "Filter Coffee",
+      "dimension": "product_name",
+      "date": "2024-05-05",
+      "observed": 10088.0,
+      "expected": 18564.0,
+      "anomaly_score": 0.32995934359814594,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "West",
+      "dimension": "region",
+      "date": "2025-03-02",
+      "observed": 17857.0,
+      "expected": 28652.5,
+      "anomaly_score": 0.32120256275532155,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Herbal Shampoo",
+      "dimension": "product_name",
+      "date": "2025-08-24",
+      "observed": 5274.0,
+      "expected": 9963.0,
+      "anomaly_score": 0.3187176380679152,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Everyday Tea",
+      "dimension": "product_name",
+      "date": "2025-05-11",
+      "observed": 3990.0,
+      "expected": 9121.0,
+      "anomaly_score": 0.3137703237753161,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2023-03-05",
+      "observed": 21912.0,
+      "expected": 10175.0,
+      "anomaly_score": 0.3113078887329277,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Salted Crisps",
+      "dimension": "product_name",
+      "date": "2023-12-24",
+      "observed": 2192.5,
+      "expected": 876.25,
+      "anomaly_score": 0.3106934451082577,
+      "severity": "High",
+      "direction": "spike"
+    },
+    {
+      "entity": "Whole Milk",
+      "dimension": "product_name",
+      "date": "2024-05-19",
+      "observed": 2412.0,
+      "expected": 4059.0,
+      "anomaly_score": 0.30518435093621166,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Cultured Yogurt",
+      "dimension": "product_name",
+      "date": "2025-12-14",
+      "observed": 3658.5,
+      "expected": 1689.75,
+      "anomaly_score": 0.30396520083970524,
+      "severity": "High",
+      "direction": "spike"
+    },
+    {
+      "entity": "Herbal Shampoo",
+      "dimension": "product_name",
+      "date": "2023-12-10",
+      "observed": 16524.0,
+      "expected": 8253.0,
+      "anomaly_score": 0.3027478966893552,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "East",
+      "dimension": "region",
+      "date": "2025-11-16",
+      "observed": 23405.0,
+      "expected": 8539.25,
+      "anomaly_score": 0.2997126939961793,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Cultured Yogurt",
+      "dimension": "product_name",
+      "date": "2023-12-24",
+      "observed": 945.0,
+      "expected": 2106.0,
+      "anomaly_score": 0.29668896745314544,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Dishwash Gel",
+      "dimension": "product_name",
+      "date": "2023-04-09",
+      "observed": 9981.0,
+      "expected": 5553.0,
+      "anomaly_score": 0.29067576941553586,
+      "severity": "High",
+      "direction": "spike"
+    },
+    {
+      "entity": "North",
+      "dimension": "region",
+      "date": "2023-05-28",
+      "observed": 4846.0,
+      "expected": 14764.0,
+      "anomaly_score": 0.28888067591717626,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2025-02-09",
+      "observed": 2090.0,
+      "expected": 3481.5,
+      "anomaly_score": 0.28530270602203145,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Oat Biscuits",
+      "dimension": "product_name",
+      "date": "2025-09-07",
+      "observed": 2873.5,
+      "expected": 1562.75,
+      "anomaly_score": 0.2841136592295542,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "North",
+      "dimension": "region",
+      "date": "2025-05-25",
+      "observed": 24427.0,
+      "expected": 14801.0,
+      "anomaly_score": 0.2776060104192194,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2023-07-09",
+      "observed": 4092.0,
+      "expected": 11660.0,
+      "anomaly_score": 0.2635943618072999,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Salted Crisps",
+      "dimension": "product_name",
+      "date": "2025-02-09",
+      "observed": 2347.5,
+      "expected": 1025.0,
+      "anomaly_score": 0.2538224695278325,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Whole Milk",
+      "dimension": "product_name",
+      "date": "2025-04-27",
+      "observed": 4776.0,
+      "expected": 2976.0,
+      "anomaly_score": 0.24756621848656568,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "West",
+      "dimension": "region",
+      "date": "2023-04-30",
+      "observed": 38401.5,
+      "expected": 24793.5,
+      "anomaly_score": 0.2470000495840482,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "South",
+      "dimension": "region",
+      "date": "2025-08-03",
+      "observed": 18916.5,
+      "expected": 10117.75,
+      "anomaly_score": 0.2458689978174785,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "North",
+      "dimension": "region",
+      "date": "2024-02-04",
+      "observed": 24165.0,
+      "expected": 11656.25,
+      "anomaly_score": 0.24248610747501942,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2024-08-04",
+      "observed": 4169.0,
+      "expected": 2497.0,
+      "anomaly_score": 0.23967875557494212,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Whole Milk",
+      "dimension": "product_name",
+      "date": "2023-12-31",
+      "observed": 5772.0,
+      "expected": 2394.0,
+      "anomaly_score": 0.23799944203534962,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "West",
+      "dimension": "region",
+      "date": "2023-09-03",
+      "observed": 31405.0,
+      "expected": 18722.5,
+      "anomaly_score": 0.2368820183174979,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Filter Coffee",
+      "dimension": "product_name",
+      "date": "2025-11-16",
+      "observed": 22542.0,
+      "expected": 11284.0,
+      "anomaly_score": 0.2318745121422675,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Dishwash Gel",
+      "dimension": "product_name",
+      "date": "2025-01-05",
+      "observed": 7272.0,
+      "expected": 3780.0,
+      "anomaly_score": 0.23021291679663947,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2023-10-22",
+      "observed": 6094.0,
+      "expected": 12936.0,
+      "anomaly_score": 0.22525073072180335,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2024-11-17",
+      "observed": 4422.0,
+      "expected": 2147.75,
+      "anomaly_score": 0.2230561522742115,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "South",
+      "dimension": "region",
+      "date": "2023-05-21",
+      "observed": 23105.0,
+      "expected": 12253.5,
+      "anomaly_score": 0.21272224943947227,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "South",
+      "dimension": "region",
+      "date": "2025-10-26",
+      "observed": 15343.5,
+      "expected": 8856.0,
+      "anomaly_score": 0.2068071043019405,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Cultured Yogurt",
+      "dimension": "product_name",
+      "date": "2025-01-12",
+      "observed": 4581.0,
+      "expected": 2173.5,
+      "anomaly_score": 0.2047475382501689,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "East",
+      "dimension": "region",
+      "date": "2025-02-16",
+      "observed": 18034.0,
+      "expected": 11362.75,
+      "anomaly_score": 0.20466833549827157,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Everyday Tea",
+      "dimension": "product_name",
+      "date": "2023-05-07",
+      "observed": 12502.0,
+      "expected": 6559.0,
+      "anomaly_score": 0.20349083245939648,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2023-12-03",
+      "observed": 4702.5,
+      "expected": 2279.75,
+      "anomaly_score": 0.20295804402849205,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Oat Biscuits",
+      "dimension": "product_name",
+      "date": "2025-10-26",
+      "observed": 3388.0,
+      "expected": 1128.75,
+      "anomaly_score": 0.19407117807556262,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "East",
+      "dimension": "region",
+      "date": "2025-03-02",
+      "observed": 22765.0,
+      "expected": 12383.75,
+      "anomaly_score": 0.18883251202586515,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Dishwash Gel",
+      "dimension": "product_name",
+      "date": "2024-04-28",
+      "observed": 9216.0,
+      "expected": 5107.5,
+      "anomaly_score": 0.18674813358837217,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Whole Milk",
+      "dimension": "product_name",
+      "date": "2023-11-26",
+      "observed": 1374.0,
+      "expected": 3624.0,
+      "anomaly_score": 0.18570831077963723,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "Herbal Shampoo",
+      "dimension": "product_name",
+      "date": "2024-05-05",
+      "observed": 13608.0,
+      "expected": 9855.0,
+      "anomaly_score": 0.18560057526411422,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Cultured Yogurt",
+      "dimension": "product_name",
+      "date": "2024-01-28",
+      "observed": 3505.5,
+      "expected": 1725.75,
+      "anomaly_score": 0.1847470173949335,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Filter Coffee",
+      "dimension": "product_name",
+      "date": "2024-09-29",
+      "observed": 17992.0,
+      "expected": 11700.0,
+      "anomaly_score": 0.1817162412613922,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2024-08-18",
+      "observed": 20196.0,
+      "expected": 10450.0,
+      "anomaly_score": 0.17233302255435579,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Whole Milk",
+      "dimension": "product_name",
+      "date": "2024-05-26",
+      "observed": 1824.0,
+      "expected": 4059.0,
+      "anomaly_score": 0.15538243143329677,
+      "severity": "Medium",
+      "direction": "drop"
+    },
+    {
+      "entity": "West",
+      "dimension": "region",
+      "date": "2025-03-09",
+      "observed": 42386.0,
+      "expected": 28652.5,
+      "anomaly_score": 0.14211200191880147,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Dishwash Gel",
+      "dimension": "product_name",
+      "date": "2023-09-17",
+      "observed": 5913.0,
+      "expected": 3150.0,
+      "anomaly_score": 0.14159548348050444,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2024-12-01",
+      "observed": 16786.0,
+      "expected": 9218.0,
+      "anomaly_score": 0.14099566347110315,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2024-04-28",
+      "observed": 6622.0,
+      "expected": 3137.75,
+      "anomaly_score": 0.14059238531438578,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Bath Soap",
+      "dimension": "product_name",
+      "date": "2024-03-31",
+      "observed": 5544.0,
+      "expected": 2758.25,
+      "anomaly_score": 0.13913803035568184,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Laundry Liquid",
+      "dimension": "product_name",
+      "date": "2025-02-16",
+      "observed": 18612.0,
+      "expected": 11682.0,
+      "anomaly_score": 0.1318345673612571,
+      "severity": "Medium",
+      "direction": "spike"
+    },
+    {
+      "entity": "Everyday Tea",
+      "dimension": "product_name",
+      "date": "2024-11-10",
+      "observed": 10934.0,
+      "expected": 5551.0,
+      "anomaly_score": 0.10645225645191303,
+      "severity": "Medium",
+      "direction": "spike"
+    }
+  ]
+}
